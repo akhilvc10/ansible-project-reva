@@ -1,0 +1,36 @@
+---
+#
+# A list of global variables used across this project.
+#
+#
+# Global AWS Variables
+    region: eu-west-1
+    aws_network_name: ansible-project-reva
+    
+
+# VPC Variables
+    vpc_cidr: 10.4.0.0/16
+    public_subnet_cidr: 10.4.0.0/24
+    public_subnet_az: eu-west-1a
+    private_subnet_1_cidr: 10.4.1.0/24
+    private_subnet_1_az: eu-west-1b
+    private_subnet_2_cidr: 10.4.2.0/24
+    private_subnet_2_az: eu-west-1c
+
+# EC2 Variables
+    ec2_id: "ami-001cd6c2ef43f38f5"
+    key_pair: "ansible-user"
+
+# RDS Variables
+    rds_user: root
+    rds_pass: Root123!
+    rds_instance_type: db.t2.small
+    rds_size_gb: 15
+    rds_parameter_engine: mysql5.6
+    rds_instance_engine: 5.6.34
+    rds_parameters:
+      - { param: 'binlog_format', value: 'ROW' }
+      - { param: 'general_log', value: '1' }
+#
+#
+#

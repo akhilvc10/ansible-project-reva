@@ -1,0 +1,19 @@
+---
+#
+#
+# AWS credentials must be provided securely in ~/.boto file in following format.
+#  [Credentials]
+#  AWS_ACCESS_KEY_ID=A...................Z
+#  AWS_SECRET_ACCESS_KEY=A..............................Z
+#
+#
+#
+#
+- name: Deploy EC2 within a custom VPC with RDS Infrastructure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - aws-network-create
+    - aws-ec2-create
+    - aws-rds-create

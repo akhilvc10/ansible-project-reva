@@ -1,0 +1,16 @@
+---
+#
+# Clean up of all of the infrastructure you have created in this project.
+#
+# Uncomment below line if you had created RDS instance.
+- import_playbook: cleanupplaybooks/cleanup-rds.yml
+- import_playbook: cleanupplaybooks/cleanup-ec2.yml
+- import_playbook: cleanupplaybooks/cleanup-networks.yml
+
+- name: Destroy all infrastructure components
+  hosts: localhost
+  connection: local
+  roles:
+    - aws-rds-delete
+    - aws-ec2-delete
+    - aws-network-delete
